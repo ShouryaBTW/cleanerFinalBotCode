@@ -5,4 +5,11 @@
 package frc.robot;
 
 /** Add your docs here. */
-public class Variables {}
+public class Variables {
+    public static class roller {
+        public static double rollerRPS = 0;
+    }   
+    public static class Shooter {
+        public static double ShooterRPS = 0;
+    }
+}

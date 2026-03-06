@@ -5,27 +5,34 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.RollerSubsytem;
 
-/* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class SetRoller extends Command {
-  /** Creates a new SetRoller. */
-  public SetRoller() {
-    // Use addRequirements() here to declare subsystem dependencies.
+public class SetRollerRPS extends Command {
+  private final double rps;
+  
+  public SetRollerRPS(RollerSubsytem roller, double rps) {
+    this.rps = rps;
+    addRequirements(roller);
+   
   }
 
-  // Called when the command is initially scheduled.
+
   @Override
   public void initialize() {}
 
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  public void execute() {}
 
-  // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void execute() {
+    Variables.roller.rollerRPS = rps;
+  }
 
-  // Returns true when the command should end.
+
+  @Override
+  public void end(boolean interrupted) {
+    Variables.roller.rollerRPS = 0;
+  }
+
+
   @Override
   public boolean isFinished() {
     return false;
