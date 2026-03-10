@@ -51,5 +51,7 @@ public class ShooterSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
     rightShooterMotor.setControl(velocityRequest.withVelocity(Variables.shooter.shooterRPS));
+    SmartDashboard.putNumber("Shooter/Left RPS", getLeftShooterSpeed());
+    SmartDashboard.putNumber("Shooter/Right RPS", getRightShooterSpeed());
   }
 }

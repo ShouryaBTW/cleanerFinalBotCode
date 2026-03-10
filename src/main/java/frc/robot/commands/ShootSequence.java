@@ -17,8 +17,7 @@ public class ShootSequence extends SequentialCommandGroup {
       FloorSubsystem floor,
       DriveSubsystem drive,
       IntakeSubsystem intake,
-      PivotSubsystem pivot,
-      double shooterRPS
+      PivotSubsystem pivot
   ) {
     addCommands(
 
@@ -29,7 +28,7 @@ public class ShootSequence extends SequentialCommandGroup {
 
         new ParallelCommandGroup(
           // Shooter runs the entire time, never interrupted
-          new SetShooterRPS(shooter, shooterRPS),
+          new SetShooterRPS(shooter),
 
           new SequentialCommandGroup(
             // Wait until shooter is up to speed before feeding
