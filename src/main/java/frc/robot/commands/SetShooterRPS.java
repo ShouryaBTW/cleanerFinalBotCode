@@ -17,7 +17,7 @@ public class SetShooterRPS extends Command {
   public SetShooterRPS(ShooterSubsystem ShooterSubsystem, double rps) {
     this.ShooterSubsystem = ShooterSubsystem;
     this.rps = rps;
-    this.isLimelight = true;
+    this.isLimelight = false;
 
     addRequirements(ShooterSubsystem);
   }
@@ -25,7 +25,7 @@ public class SetShooterRPS extends Command {
   public SetShooterRPS(ShooterSubsystem ShooterSubsystem) {
     this.ShooterSubsystem = ShooterSubsystem;
     this.rps = 0;
-    this.isLimelight = false;
+    this.isLimelight = true;
 
     addRequirements(ShooterSubsystem);
   }

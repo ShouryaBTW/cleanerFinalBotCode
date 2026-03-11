@@ -266,7 +266,8 @@ public class LimelightSubsystem extends SubsystemBase {
 
         SmartDashboard.putNumber("distanceMeters", Variables.limelight.distanceMeters);
         SmartDashboard.putNumber("turnAngle", Variables.limelight.turnAngle);
-        SmartDashboard.putNumber("shooterRPS", Variables.limelight.shooterRPS);
+        SmartDashboard.putNumber("shooterRPS limelight", Variables.limelight.shooterRPS);
+        SmartDashboard.putNumber("shooter target rps", Variables.shooter.shooterRPS);
     }
   }
 }
