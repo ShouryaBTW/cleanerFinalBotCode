@@ -21,15 +21,10 @@ public class KnownShoot extends SequentialCommandGroup {
       double shooterRPS
   ) {
     addCommands(
-
-      new TurnToTagLive(drive),
-      new ParallelCommandGroup(
-        // Lock drivetrain in place
-        // new RunCommand(() -> drive.setX(), drive),
-
-        new ParallelCommandGroup(
           // Shooter runs the entire time, never interrupted
+        new ParallelCommandGroup(
           new SetShooterRPS(shooter, shooterRPS),
+
 
           new SequentialCommandGroup(
             // Wait until shooter is up to speed before feeding
@@ -43,7 +38,6 @@ public class KnownShoot extends SequentialCommandGroup {
             )
           )
         )
-      )
-    );
+        );
   }
 }

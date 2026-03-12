@@ -23,8 +23,8 @@ public class Robot extends TimedRobot {
   public Robot() {
     m_robotContainer = new RobotContainer();
 
-    m_autoChooser.setDefaultOption("Middle Auto", kAutoMiddle);
-    m_autoChooser.addOption("Left Side Auto", kAutoLeft);
+    m_autoChooser.setDefaultOption("Left Side Auto", kAutoLeft);
+    m_autoChooser.addOption("Middle Auto", kAutoMiddle);
     m_autoChooser.addOption("Right Side Auto", kAutoRight);
     SmartDashboard.putData("Auto Chooser", m_autoChooser);
 

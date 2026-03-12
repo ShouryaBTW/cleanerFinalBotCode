@@ -6,6 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Variables;
+import frc.robot.subsystems.FloorSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.PivotSubsystem;
 
@@ -14,15 +15,20 @@ public class RunIntake extends Command {
   private final IntakeSubsystem intakeSubsystem;
   private final PivotSubsystem pivotSubsystem;
 
-  private final double rps;
-  private final double position;
 
-  public RunIntake(IntakeSubsystem intakeSubsystem, PivotSubsystem pivotSubsystem, double rps, double position) {
+  private final double intakeRPS;
+  private final double position;
+  
+  
+
+  public RunIntake(IntakeSubsystem intakeSubsystem, PivotSubsystem pivotSubsystem, double intakeRPS, double position) {
     this.intakeSubsystem = intakeSubsystem;
     this.pivotSubsystem = pivotSubsystem;
 
-    this.rps = rps;
+
+    this.intakeRPS = intakeRPS;
     this.position = position;
+
 
     addRequirements(intakeSubsystem, pivotSubsystem);
   }
@@ -35,7 +41,7 @@ public class RunIntake extends Command {
 
   @Override
   public void execute() {
-    Variables.intake.intakeRPS = rps;
+    Variables.intake.intakeRPS = intakeRPS;
   }
 
   // Called once the command ends or is interrupted.
